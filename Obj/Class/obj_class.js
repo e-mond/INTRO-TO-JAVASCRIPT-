@@ -61,4 +61,53 @@ const freshStudent = new studentDetails ("Ablerta", "BC2202","L200","Civil Engin
 console.log(freshStudent.getNameAndCourse());
 
 // inheritance in classes
- 
+class Phone {
+    constructor(model, storage, os, batterylife, brand) {
+        this.model = model;
+        this.storage = storage;
+        this.os = os;
+        this.batterylife = batterylife;
+        this.brand = brand;
+    }
+}
+
+const iphone = new Phone("XR", 32, "iOS", "100%", "Apple");
+console.log(iphone);
+
+class Iphone extends Phone {
+    features() {
+        return this.model + " 11 Promax";
+    }
+}
+
+const iphone11promax = new Iphone("11", 128, "iOS", "100%", "Apple");
+console.log(iphone11promax.features());
+
+// Example 3
+class Movie {
+    constructor(title, genre, releaseYear) {
+        this.title = title;
+        this.genre = genre;
+        this.releaseYear = releaseYear;
+    }
+}
+
+class Title extends Movie {
+    constructor(title, genre, releaseYear, rating) {
+        super(title, genre, releaseYear);
+        this.rating = rating;
+    }
+
+    getTitleDetails() {
+        return `${this.title} (${this.releaseYear}) - ${this.genre} - Rated ${this.rating}`;
+    }
+}
+
+const movie1 = new Title("Inception", "Sci-Fi", 2010, "PG-13");
+
+
+console.log(movie1.getTitleDetails());
+
+
+// 
+
